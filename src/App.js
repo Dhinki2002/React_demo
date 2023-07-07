@@ -132,60 +132,63 @@
 // }
 
 // export default App
-import { getPosts } from  './api/axios'
-import {useState, useEffect} from 'react'
-import SearchBar from './SearchBar'
-import ListPage from './ListPage' 
-import download from './image/download.png';
+//  import { getPosts } from  './api/axios'
+//  import {useState, useEffect} from 'react'
+// import SearchBar from './SearchBar'
+// import ListPage from './ListPage' 
+// import download from './image/download.png';
+import Navbar from './Navbar';
+import 	React from 'react';
+import  {BrowserRouter as Router, Routes,Route} from 'react-router-dom';
+import Jobs from './pages/jobs.js';
+import Tutorials from './pages/tutorials.js';
+import Students from'./pages/students.js';
+import Courses from './pages/courses.js';
 
 function App(){
-	<div>
-			<nav class="navbar background">
-				<ul class="nav-list">
-					<div class="logo">
-						<img src={download} alt="logo" 
- />
-					</div>
-					<li><a href="#courses">Courses</a></li>
-					<li><a href="#tutorials">Tutorials</a></li>
-				<li><a href="#jobs">Jobs</a></li>
-				<li><a href='#student'>Student</a></li>
-				</ul>
-
-			
-
-</nav>
-</div>	
-	const [posts,setPosts]= useState([])
-	const[searchResults,setSearchResults]= useState([])
-	useEffect(()=>{
-		getPosts().then(json=>{
-			setPosts(json)
-			setSearchResults(json)
-		})
-	},[])
 	
-	return (<>
-		<div>
-			<nav class="navbar background">
-				<ul class="nav-list">
-					<div class="logo">
-						<img src={download} alt="logo" 
- />
-					</div>
-					<li><a href="#courses">Courses</a></li>
-					<li><a href="#tutorials">Tutorials</a></li>
-				<li><a href="#jobs">Jobs</a></li>
-				<li><a href='#student'>Student</a></li>
-				</ul>
+	// const [posts,setPosts]= useState([])
+	// const[searchResults,setSearchResults]= useState([])
+	// useEffect(()=>{
+	// 	getPosts().then(json=>{
+	// 		setPosts(json)
+	// 		setSearchResults(json)
+	// 	})
+	// },[])
+	
+// 	return (<>
+// 		<div>
+// 			<nav class="navbar background">
+// 				<ul class="nav-list">
+// 					<div class="logo">
+// 						<img src={download} alt="logo" 
+//  />
+// 					</div>
+// 					<li><a href="/courses">Courses</a></li>
+// 					<li><a href="/tutorials">Tutorials</a></li>
+// 				<li><a href="/jobs">Jobs</a></li>
+// 				<li><a href='/student'>Student</a></li>
+// 				</ul>
 
-				<SearchBar posts={posts} setSearchResults={setSearchResults} />
+// 				<SearchBar posts={posts} setSearchResults={setSearchResults} />
 		
-</nav>
-</div>	
-<ListPage searchResults={searchResults}/> 
+// </nav>
+// </div>	
+return (<>
+<Router>
+	<Navbar/>
+	<Routes>
+	<Route path='/tutorials' component={Tutorials} />
+        <Route path='/students' component={Students} />
+        <Route path='/jobs' component={Jobs} />
+        <Route path='/courses' component={Courses} />
+        
+	</Routes>
+</Router>
 
-		</>
+ </>
+
+		
 	)
 }
 export default App;
