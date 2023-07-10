@@ -24,16 +24,17 @@ const Navbar = () => {
                     <img src={download} alt="logo" 
 />
                 </div>
+                <li><a href="/">Home</a></li>
                 <li><a href="/courses">Courses</a></li>
                 <li><a href="/tutorials">Tutorials</a></li>
-            <li><a href="/jobs">Jobs</a></li>
+           
             <li><a href='/student'>Student</a></li>
             </ul>
-            <SearchBar posts={posts} setSearchResults={setSearchResults} />
+             {/* <SearchBar posts={posts} setSearchResults={setSearchResults} />  */}
     
 </nav>
 </div>	
-<ListPage searchResults={searchResults}/> 
+ {/* <ListPage searchResults={searchResults}/>   */}
 
 </>
   )

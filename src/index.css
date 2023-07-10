@@ -195,7 +195,7 @@ background-color: #000;
   }
   
   .search {
-	width: 60%;
+	width: 30%;
 	border: 2px solid #000;
 	border-radius: 2em;
 	overflow: hidden;
@@ -274,7 +274,7 @@ background-color: #000;
 }
 
 .nav-list {
-	width: 70%;
+	width: 90%;
 	display: flex;
 	align-items: center;
 }
@@ -286,7 +286,7 @@ background-color: #000;
 }
 
 .logo img {
-	width: 180px;
+	width: 150px;
 	border-radius: 50px;
 }
 

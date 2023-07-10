@@ -144,6 +144,7 @@ import Jobs from './pages/jobs.js';
 import Tutorials from './pages/tutorials.js';
 import Students from'./pages/students.js';
 import Courses from './pages/courses.js';
+import Home from './pages/home.js';
 
 function App(){
 	
@@ -178,10 +179,12 @@ return (<>
 <Router>
 	<Navbar/>
 	<Routes>
-	<Route path='/tutorials' component={Tutorials} />
-        <Route path='/students' component={Students} />
-        <Route path='/jobs' component={Jobs} />
-        <Route path='/courses' component={Courses} />
+	<Route path="/" element={<Home />} />
+	<Route path="/courses" element={<Courses/>} />
+    <Route path="/tutorials" element={<Tutorials/>} />
+	
+	<Route path="/student" element={<Students/>} />
+
         
 	</Routes>
 </Router>
